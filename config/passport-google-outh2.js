@@ -9,9 +9,9 @@ const userModel=require('../models/userModel');
 passport.use(new Oauth2Strategy({
     clientID:'415880099284-6hqm0ghvh5vkc2cledv05tmq5avs12uc.apps.googleusercontent.com',
     clientSecret:'avKAEoWu7sJ7mJdoNtDz-PcD',
-    callbackURL:'http://localhost:8000/user/auth/google/callback'
+    callbackURL:'https://todoer-auth.onrender.com/user/auth/google/callback'
+    //callbackURL:'http://localhost:8000/user/auth/google/callback'
     
-
 },
     function(accesToken,refreshToken,profile,done){
         userModel.findOne({email:profile.emails[0].value}).exec(function(err,user){//finding user
